@@ -1,4 +1,4 @@
-package com.swhittier.accountmanagement;
+package edu.emory.sph.stepsmart;
 
 import android.accounts.Account;
 import android.accounts.AccountAuthenticatorActivity;
@@ -13,15 +13,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.swhittier.accountmanagement.authentication.AccountHelper;
-import com.swhittier.accountmanagement.tools.PasswordValidator;
-import com.swhittier.accountmanagement.tools.UserNameValidator;
+import com.swhittier.accountmanagement.R;
+import edu.emory.sph.stepsmart.authentication.AccountHelper;
+import edu.emory.sph.stepsmart.tools.PasswordValidator;
+import edu.emory.sph.stepsmart.tools.UserNameValidator;
 
 /**
- * Class Name: UserRegistration
- * Description: Code for the UserRegistration Activity
+ * Class Name: UserRegistrationActivity
+ * Description: Code for the UserRegistrationActivity Activity
  */
-public class UserRegistration extends AccountAuthenticatorActivity {
+public class UserRegistrationActivity extends AccountAuthenticatorActivity {
 
     //region Private Variables
 
@@ -31,7 +32,7 @@ public class UserRegistration extends AccountAuthenticatorActivity {
 
     //region Constants
 
-    static final String CLASS_TAG = "UserRegistration";
+    static final String CLASS_TAG = "UserRegistrationActivity";
 
     //endregion
 

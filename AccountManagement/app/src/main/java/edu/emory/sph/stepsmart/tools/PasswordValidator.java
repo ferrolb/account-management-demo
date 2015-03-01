@@ -1,4 +1,4 @@
-package com.swhittier.accountmanagement.tools;
+package edu.emory.sph.stepsmart.tools;
 
 import android.content.Context;
 import android.util.Log;

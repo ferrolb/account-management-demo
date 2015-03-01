@@ -1,8 +1,10 @@
-package com.swhittier.accountmanagement.authentication;
+package edu.emory.sph.stepsmart.authentication;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+
+import edu.emory.sph.stepsmart.authentication.AccountAuthenticator;
 
 /**
  * Class Name: AuthenticationService

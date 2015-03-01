@@ -1,4 +1,4 @@
-package com.swhittier.accountmanagement.authentication;
+package edu.emory.sph.stepsmart.authentication;
 
 import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
@@ -10,8 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.swhittier.accountmanagement.UserLogin;
-import com.swhittier.accountmanagement.UserRegistration;
+import edu.emory.sph.stepsmart.UserLoginActivity;
+import edu.emory.sph.stepsmart.UserRegistrationActivity;
 
 /**
  * Class Name: AccountAuthenticator
@@ -69,7 +69,7 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
         final Intent intent;
         final Bundle bundle;
 
-        intent = new Intent(_context, UserRegistration.class);
+        intent = new Intent(_context, UserRegistrationActivity.class);
         intent.putExtra(AccountHelper.ARG_ACCOUNT_TYPE, accountType);
         intent.putExtra(AccountHelper.ARG_AUTH_TYPE, authTokenType);
         intent.putExtra(AccountHelper.ARG_IS_ADDING_NEW_ACCOUNT, true);
@@ -123,7 +123,7 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
 
         // Launch UserLogin to confirm credentials. This will be the case if confirmCredentials is called from elsewhere besides the UserLogin Activity
         final Intent intent;
-        intent = new Intent(_context, UserLogin.class);
+        intent = new Intent(_context, UserLoginActivity.class);
 
         intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);
         intent.putExtra(AccountHelper.ARG_ACCOUNT_NAME, account.name);

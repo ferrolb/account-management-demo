@@ -1,4 +1,4 @@
-package com.swhittier.accountmanagement.authentication;
+package edu.emory.sph.stepsmart.authentication;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -237,7 +237,7 @@ public class AccountHelper {
         if(account == null) {
 
             // No Account.  Could have been deleted.  Should not happen, but if it does,
-            // App will show UserRegistration Activity.
+            // App will show UserRegistrationActivity Activity.
             Log.d(METHOD_TAG, "No Accounts found.");
 
             Toast toast = Toast.makeText(_context, _context.getString(R.string.err_msg_no_accounts), Toast.LENGTH_SHORT);

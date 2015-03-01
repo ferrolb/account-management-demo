@@ -1,4 +1,4 @@
-package com.swhittier.accountmanagement;
+package edu.emory.sph.stepsmart;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -9,7 +9,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.swhittier.accountmanagement.authentication.AccountHelper;
+import com.swhittier.accountmanagement.R;
+
+import edu.emory.sph.stepsmart.authentication.AccountHelper;
 
 public class WelcomeActivity extends Activity {
 
@@ -70,12 +72,12 @@ public class WelcomeActivity extends Activity {
 
 
     /**
-     * Starts the UserRegistration Activity.
+     * Starts the UserRegistrationActivity Activity.
      */
     private void startUserRegistrationActivity() {
 
 
-        Intent myIntent = new Intent(this, UserRegistration.class);
+        Intent myIntent = new Intent(this, UserRegistrationActivity.class);
         this.startActivityForResult(myIntent, REGISTRATION_ACTIVITY);
     }
 
@@ -86,7 +88,7 @@ public class WelcomeActivity extends Activity {
     static final int REGISTRATION_ACTIVITY = 2;
     private void startUserLoginActivity() {
 
-        Intent myIntent = new Intent(this, UserLogin.class);
+        Intent myIntent = new Intent(this, UserLoginActivity.class);
         this.startActivityForResult(myIntent, LOGIN_ACTIVITY);
     }
 

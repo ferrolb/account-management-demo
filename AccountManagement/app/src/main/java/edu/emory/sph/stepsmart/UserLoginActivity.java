@@ -1,4 +1,4 @@
-package com.swhittier.accountmanagement;
+package edu.emory.sph.stepsmart;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -17,7 +17,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.swhittier.accountmanagement.authentication.AccountHelper;
+import com.swhittier.accountmanagement.R;
+import edu.emory.sph.stepsmart.authentication.AccountHelper;
 
 import java.io.IOException;
 
@@ -25,7 +26,7 @@ import java.io.IOException;
  * Class Name: UserLogin
  * Description: Code for the UserLogin Activity
  */
-public class UserLogin extends Activity {
+public class UserLoginActivity extends Activity {
 
     //region Private Variables
 

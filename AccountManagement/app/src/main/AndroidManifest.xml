@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".WelcomeActivity"
+            android:name="edu.emory.sph.stepsmart.WelcomeActivity"
             android:label="App main activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,25 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        
         <activity
-            android:name=".UserRegistration"
-            android:label="User Registration"
-            android:parentActivityName=".WelcomeActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.swhittier.accountmanagement.WelcomeActivity" />
+            android:name="edu.emory.sph.stepsmart.UserRegistrationActivity"
+            android:label="User Registration">
 >
         </activity>
         <activity
-            android:name=".UserLogin"
-            android:label="User login"
-            android:parentActivityName=".WelcomeActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.swhittier.accountmanagement.WelcomeActivity" />
+            android:name="edu.emory.sph.stepsmart.UserLoginActivity"
+            android:label="User login">
         </activity>
 
-        <service android:name=".authentication.AuthenticationService" >
+        <service android:name="edu.emory.sph.stepsmart.authentication.AuthenticationService" >
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
