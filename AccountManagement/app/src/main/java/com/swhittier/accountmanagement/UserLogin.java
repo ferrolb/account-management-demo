@@ -87,12 +87,16 @@ public class UserLogin extends Activity {
             Toast toast = Toast.makeText(_context, _context.getString(R.string.err_msg_no_accounts), Toast.LENGTH_SHORT);
             toast.show();
 
-            startWelcomeActivity();
+            exitOnError();
 
             return;
         }
 
         setContentView(R.layout.activity_user_login);
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
     @Override
@@ -128,14 +132,6 @@ public class UserLogin extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    //endregion
-
-    //region Event Handlers
-
-    /**
-     * Handler for the click event for the "Log In" button.
-     * @param v
-     */
     public void onButtonLogInClick(View v) {
 
         String METHOD_TAG;
@@ -170,7 +166,6 @@ public class UserLogin extends Activity {
         _passwordValidatorTask = new PasswordValidationTask();
         _passwordValidatorTask.execute();
 
-        return;
     }
 
     //endregion
@@ -180,33 +175,27 @@ public class UserLogin extends Activity {
     /**
      * Starts Application Home Activity.
      */
-    private void startApplicationHomeActivity() {
+    private void exitOnSuccess() {
 
-        String METHOD_TAG;
-        METHOD_TAG = CLASS_TAG + ".startApplicationHomeActivity()";
-
-        Log.d(METHOD_TAG, "Starting Application Home Activity.");
-
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
         this.finish();
 
-        Intent myIntent = new Intent(this, ApplicationHome.class);
-        this.startActivity(myIntent);
+//        Intent myIntent = new Intent(this, ApplicationHome.class);
+//        this.startActivity(myIntent);
     }
 
     /**
      * Starts the Welcome Activity.
      */
-    private void startWelcomeActivity() {
+    private void exitOnError() {
 
-        String METHOD_TAG;
-        METHOD_TAG = CLASS_TAG + ".startWelcomeActivity()";
+        Intent intent = new Intent();
+        setResult(3, intent);
+        finish();
 
-        Log.d(METHOD_TAG, "Starting Welcome Activity.");
-
-        this.finish();
-
-        Intent myIntent = new Intent(this, WelcomeActivity.class);
-        this.startActivity(myIntent);
+//        Intent myIntent = new Intent(this, WelcomeActivity.class);
+//        this.startActivity(myIntent);
     }
 
     //endregion
@@ -237,7 +226,7 @@ public class UserLogin extends Activity {
 
             AccountHelper.getInstance(_context).setAuthToken(account, AccountHelper.AUTHTOKEN_TYPE_FULL_ACCESS, AccountHelper.AUTH_TOKEN);
 
-            startApplicationHomeActivity();
+            exitOnSuccess();
         }
         else
         {
@@ -245,7 +234,6 @@ public class UserLogin extends Activity {
             toast.show();
         }
 
-        return;
     }
 
     /**
@@ -261,7 +249,6 @@ public class UserLogin extends Activity {
         // Our task is complete, so clear it out.
         _passwordValidatorTask = null;
 
-        return;
     }
 
     /**

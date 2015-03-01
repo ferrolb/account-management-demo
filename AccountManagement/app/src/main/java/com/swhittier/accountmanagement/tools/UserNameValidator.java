@@ -22,7 +22,7 @@ public class UserNameValidator {
 
     static final String CLASS_TAG = "UserNameValidator";
     static final int MAX_LENGTH = 20;
-    static final int MIN_LENGTH = 6;
+    static final int MIN_LENGTH = 1;
 
     //endregion
 

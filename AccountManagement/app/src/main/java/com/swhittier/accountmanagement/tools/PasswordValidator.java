@@ -29,10 +29,11 @@ public class PasswordValidator {
 
     static final String CLASS_TAG = "PasswordValidator";
     static final int MAX_LENGTH = 20;
-    static final int MIN_LENGTH = 6;
+    static final int MIN_LENGTH = 1;  // was 6
 
     // Default pattern: Alphanumeric with at least 1 digit, 1 uppercase, and a length between 6 and 20
-    private static final String DEFAULT_PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{" + MIN_LENGTH + "," + MAX_LENGTH + "})";
+    // private static final String DEFAULT_PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{" + MIN_LENGTH + "," + MAX_LENGTH + "})";
+    private static final String DEFAULT_PASSWORD_PATTERN = "((?=.*\\w).{"+MIN_LENGTH+","+MAX_LENGTH+"})";
 
     //endregion
 
@@ -80,11 +81,7 @@ public class PasswordValidator {
         return true;
     }
 
-    /**
-     * Validates a password with regular expression
-     * @param password
-     * @return
-     */
+
     public boolean validate(final String password){
 
         String METHOD_TAG;
@@ -105,5 +102,4 @@ public class PasswordValidator {
         return true;
     }
 
-    //endregion
 }

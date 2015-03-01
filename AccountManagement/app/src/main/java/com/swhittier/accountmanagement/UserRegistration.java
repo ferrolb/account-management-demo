@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.swhittier.accountmanagement.authentication.AccountAuthenticator;
 import com.swhittier.accountmanagement.authentication.AccountHelper;
 import com.swhittier.accountmanagement.tools.PasswordValidator;
 import com.swhittier.accountmanagement.tools.UserNameValidator;
@@ -69,14 +68,6 @@ public class UserRegistration extends AccountAuthenticatorActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //endregion
-
-    //region Event Handlers
-
-    /**
-     * Handler for the click event for the "Create Account" button.
-     * @param v
-     */
     public void onButtonCreateAccountClick(View v) {
 
         String METHOD_TAG;
@@ -144,16 +135,16 @@ public class UserRegistration extends AccountAuthenticatorActivity {
         if(intent != null) {
 
             Log.d(METHOD_TAG, "Account Created.");
+
+
             this.finish();
-            this.startActivity(intent);
+//            this.startActivity(intent);
 
             // TODO: If this Activity was launched via the Settings applet via the AuthenticationService,
             // Then we should call finish() here and exit the app UI.  Otherwise, get the token, and go to the
             // Application Home screen.
             // this.finish();
         }
-
-        return;
     }
 
     //endregion
@@ -200,7 +191,7 @@ public class UserRegistration extends AccountAuthenticatorActivity {
 
             // Create the Intent to start the Application Home Activity
             final Intent intent;
-            intent = new Intent(this, ApplicationHome.class);
+            intent = new Intent(/*this, ApplicationHome.class*/);
             intent.putExtra(AccountManager.KEY_ACCOUNT_NAME, userName);
             intent.putExtra(AccountManager.KEY_ACCOUNT_TYPE, accountType);
 
@@ -217,6 +208,4 @@ public class UserRegistration extends AccountAuthenticatorActivity {
             return null;
         }
     }
-
-    //endregion
 }

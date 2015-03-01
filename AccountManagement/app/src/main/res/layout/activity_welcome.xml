@@ -16,7 +16,7 @@
         android:id="@+id/welcomeMainLayout"
         android:weightSum="1">
 
-        <TextView
+        TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -24,7 +24,7 @@
             android:id="@+id/textViewWelcome"
             android:inputType="none" />
 
-        <TextView
+        TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/textview_welcome_need_account"
@@ -34,7 +34,7 @@
             android:paddingBottom="10dp"
             android:textSize="18sp" />
 
-        <Button
+        Button
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/button_welcome_register"
@@ -43,10 +43,9 @@
             android:background="#ff0000ff"
             android:textColor="@android:color/darker_gray"
             android:clickable="true"
-            android:enabled="true"
-            android:onClick="onButtonGoToRegisterUserRegistrationClick" />
+            android:enabled="true" />
 
-        <TextView
+        TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/textview_welcome_have_account"
@@ -56,7 +55,7 @@
             android:paddingBottom="10dp"
             android:textSize="18sp" />
 
-        <Button
+        Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_welcome_login"
@@ -65,10 +64,15 @@
             android:background="#ff0000ff"
             android:textColor="@android:color/darker_gray"
             android:enabled="true"
-            android:clickable="true"
-            android:onClick="onButtonGoToLoginClick" />
+            android:clickable="true"/>
 
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/cops"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
 </RelativeLayout>
